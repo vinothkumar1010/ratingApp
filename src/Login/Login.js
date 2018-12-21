@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-
+import axios from 'axios';
 class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
-      password:''
+      emailInp: '',
+      passwordInp:''
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -16,6 +16,10 @@ class Login extends Component {
     //   isToggleOn: !state.isToggleOn
     // }));
     console.log(this.state);
+    axios.post('http://localhost:8080/user/authenticate',{email:this.state.emailInp,password:this.state.passwordInp}).then(res => {
+      console.log(res);
+      console.log(res.data);
+    });
   }
   handleChange(event){
     this.setState({[event.target.name]: event.target.value});

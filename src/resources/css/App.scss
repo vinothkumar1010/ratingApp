@@ -27,11 +27,3 @@ body
     background-color: #03A4A9;
   }
 }
-
-db.ratingapp.insert({
-  name: "Vinoth Kumar",
-  dob: 10/10/1987,
-  doj: now,
-  active:0,
-  user_id:1
-})
