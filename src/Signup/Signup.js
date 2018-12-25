@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-
+import React, { Component } from "react";
+import "./Signup.scss";
 class Signup extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      nameInp: '',
-      emailInp:''
+      nameInp: "",
+      emailInp: ""
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -17,15 +17,41 @@ class Signup extends Component {
     // }));
     console.log(this.state);
   }
-  handleChange(event){
-    this.setState({[event.target.name]: event.target.value});
+  handleChange(event) {
+    this.setState({ [event.target.name]: event.target.value });
   }
   render() {
     return (
-    <div id="signupComp">
-        <input type="text" name="nameInp" id="nameInp" value={this.state.nameInp} onChange={this.handleChange}/>
-        <input type="emailInp" name="emailInp" id="emailInp" value={this.state.emailInp} onChange={this.handleChange}/>
-        <button type="button" id="signupBtn" name="signupBtn" onClick={this.handleClick}>Signup</button>
+      <div id="signupComp">
+        <div>
+          <label htmlFor="nameInp">Name</label>
+          <input
+            type="text"
+            name="nameInp"
+            id="nameInp"
+            value={this.state.nameInp}
+            onChange={this.handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="emailInp">Email</label>
+          <input
+            type="emailInp"
+            name="emailInp"
+            id="emailInp"
+            value={this.state.emailInp}
+            onChange={this.handleChange}
+          />
+        </div>
+
+        <button
+          type="button"
+          id="signupBtn"
+          name="signupBtn"
+          onClick={this.handleClick}
+        >
+          Signup
+        </button>
       </div>
     );
   }

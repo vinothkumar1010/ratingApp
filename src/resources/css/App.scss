@@ -1,29 +1,28 @@
-$white: #FFFFFF;
-$primaryColor:#03A4A9;
-
-
-body
-{
-  background-color:#FFFFFF;
+$white: #ffffff;
+$primaryColor: #03a4a9;
+* {
+  box-sizing: border-box;
 }
-#root
-{
+body {
+  background-color: #ffffff;
+}
+#root {
   max-width: 1200px;
   margin: 0 auto;
-  input
-  {
-    width:250px;
-    padding:5px;
-    border:1px solid #F0F0F0;
+  box-sizing: border-box;
+  input {
+    width: 250px;
+    padding: 10px;
+    border: 1px solid #ccc;
     border-radius: 5px;
+    margin: 5px;
   }
-  button
-  {
-    border:0;
-    padding:5px;
-    min-width:100px;
+  button {
+    border: 0;
+    padding: 10px;
+    min-width: 100px;
     text-align: center;
-    color:#fff;
-    background-color: #03A4A9;
+    color: #fff;
+    background-color: #03a4a9;
   }
 }

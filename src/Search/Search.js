@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Search extends Component {
   render() {
     return (
-    <div>
-        
+      <div className="serachComp">
+        <input type="text" name="serachInp" id="searchInp" />
       </div>
     );
   }
