@@ -29,6 +29,7 @@ class Signup extends Component {
             type="text"
             name="nameInp"
             id="nameInp"
+            placeholder="Your name"
             value={this.state.nameInp}
             onChange={this.handleChange}
           />
@@ -39,6 +40,7 @@ class Signup extends Component {
             type="emailInp"
             name="emailInp"
             id="emailInp"
+            placeholder="Your email"
             value={this.state.emailInp}
             onChange={this.handleChange}
           />

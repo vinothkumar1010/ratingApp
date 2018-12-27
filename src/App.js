@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import { Route, Link, BrowserRouter as Router } from "react-router-dom";
+import { Route, BrowserRouter as Router } from "react-router-dom";
+//import { browserHistory } from "react-router";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 import Signup from "./Signup/Signup";
-import Bannercarousel from "./Movies/Bannercarousel/Bannercarousel";
 import "./resources/css/App.scss";
-const token = localStorage.getItem("token");
+import NewMovie from "./Movies/NewMovie/NewMovie";
+import Banner from "./Banner/Banner";
 // if (token) {
 //     store.dispatch({ type: AUTHENTICATE_THE_USER });
 // }
@@ -14,9 +15,8 @@ const routing = (
     <div>
       <Header />
       {/* <Route path="/" render={ ( props ) => ( props.location.pathname !== "/") && <Header /> }></Route> */}
-      <Route exact path="/" component={App} />
       <Route path="/Signup" component={Signup} />
-
+      <Route path="/NewMovie" component={NewMovie} />
       <Footer />
     </div>
   </Router>
@@ -26,8 +26,7 @@ class App extends Component {
     return (
       <div>
         {routing}
-        {!token ? <Signup /> : ""}
-        <Bannercarousel />
+        <Banner />
       </div>
     );
   }
