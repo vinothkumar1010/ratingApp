@@ -15,12 +15,11 @@ class Bannercarousel extends Component {
       <div
         className="carouselMovie"
         style={{
-          backgroundImage: `url(${movieDetail.poster})`
+          backgroundImage: `url(${window.location.origin + '/resources/moviePosters/'+movieDetail.poster+'.jpg'})`,
+          height:'129px'
         }}
         key={movieDetail.id}
-      >
-        {movieDetail.name}
-        <img src={movieDetail.poster} alt={movieDetail.name} />
+      >&nbsp;
       </div>
     ));
     return movieDetailInfo;
