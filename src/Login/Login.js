@@ -11,7 +11,12 @@ class Login extends Component {
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
-
+  handleKeyPress = (e) => {
+    console.log("KeyPress event")
+    if (e.key === 'Enter') {
+      this.handleClick(e);
+    }
+  }
   handleClick(event) {
     event.preventDefault();
     // this.setState(state => ({
@@ -48,6 +53,7 @@ class Login extends Component {
           placeholder="abc@abc.com"
           value={this.state.email}
           onChange={this.handleChange}
+          onKeyPress={this.handleKeyPress}
         />
         <input
           type="password"
@@ -56,6 +62,7 @@ class Login extends Component {
           placeholder="password"
           value={this.state.password}
           onChange={this.handleChange}
+          onKeyPress={this.handleKeyPress}
         />
         <button
           type="button"
