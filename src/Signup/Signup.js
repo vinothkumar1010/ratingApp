@@ -4,7 +4,10 @@ import axios from "axios";
 import "./Signup.scss";
 const recaptchaRef = React.createRef();
 class Signup extends Component {
-  
+  componentWillMount()
+  {
+    console.log(process.env.REACT_APP_API_URL);
+  }
   constructor(props) {
     super(props);
     this.state = {
@@ -12,18 +15,18 @@ class Signup extends Component {
       emailInp: ""
     };
     this.handleClick = this.handleClick.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);  
   }
   /* componentDidMount() {
     loadReCaptcha();
   } */
   handleClick() {
-    // this.setState(state => ({
-    //   isToggleOn: !state.isToggleOn
-    // }));
+    
     console.log(this.state);
+
+    recaptchaRef.current.execute();
     axios
-      .post("http://localhost:8080/user/createAccount", {
+      .post(process.env.REACT_APP_API_URL+"/user/createAccount", {
         email: this.state.emailInp,
         name: this.state.nameInp
       })
@@ -68,7 +71,7 @@ class Signup extends Component {
         <ReCAPTCHA
       ref={recaptchaRef}
       size="invisible"
-      sitekey="mysitesecretkey"
+      sitekey={process.env.REACT_APP_CAPTCHA}
     />
         <button
           type="button"

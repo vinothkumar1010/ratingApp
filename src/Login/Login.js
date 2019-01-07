@@ -24,7 +24,7 @@ class Login extends Component {
     // }));
     console.log(this.state);
     axios
-      .post("http://localhost:8080/user/authenticate", {
+      .post(process.env.REACT_APP_API_URL+"/user/authenticate", {
         email: this.state.emailInp,
         password: this.state.passwordInp
       })
