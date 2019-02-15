@@ -6,6 +6,7 @@ import Footer from "./Footer/Footer";
 import Signup from "./Signup/Signup";
 import "./resources/css/App.scss";
 import NewMovie from "./Movies/NewMovie/NewMovie";
+import Activate from "./Users/Activate/activate"
 import Banner from "./Banner/Banner";
 // if (token) {
 //     store.dispatch({ type: AUTHENTICATE_THE_USER });
@@ -17,6 +18,7 @@ const routing = (
       {/* <Route path="/" render={ ( props ) => ( props.location.pathname !== "/") && <Header /> }></Route> */}
       <Route path="/Signup" component={Signup} />
       <Route path="/NewMovie" component={NewMovie} />
+      <Route path="/Activate/:confirmationNumber?" component={Activate} />
       <Footer />
     </div>
   </Router>
